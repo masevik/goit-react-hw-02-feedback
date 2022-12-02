@@ -12,22 +12,29 @@ export class Feedback extends Component {
   handleIncrement = event => {
     const targetName = event.currentTarget.name;
     this.setState(prevState => {
-      if (targetName === 'good') {
-        return {
-          good: prevState.good + 1,
-        };
-      }
-      if (targetName === 'neutral') {
-        return {
-          neutral: prevState.neutral + 1,
-        };
-      }
-      if (targetName === 'bad') {
-        return {
-          bad: prevState.bad + 1,
-        };
+      switch (targetName) {
+        case 'good':
+          return { good: prevState.good + 1 };
+        case 'neutral':
+          return { neutral: prevState.neutral + 1 };
+        case 'bad':
+          return { bad: prevState.bad + 1 };
+        default:
+          console.log('default');
       }
     });
+  };
+
+  countTotalFeedback = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+
+  countPositiveFeedbackPercentage = countTotalFeedback => {
+    const { good, neutral } = this.state;
+    return this.countTotalFeedback() === 0
+      ? 0
+      : Math.round(((good + neutral) * 100) / this.countTotalFeedback());
   };
 
   render() {
@@ -58,6 +65,14 @@ export class Feedback extends Component {
           <StatisticsItem>
             <span>Bad:</span>
             <span>{this.state.bad}</span>
+          </StatisticsItem>
+          <StatisticsItem>
+            <span>Total:</span>
+            <span>{this.countTotalFeedback()}</span>
+          </StatisticsItem>
+          <StatisticsItem>
+            <span>Positive feedback:</span>
+            <span>{this.countPositiveFeedbackPercentage()}%</span>
           </StatisticsItem>
         </ul>
       </Box>

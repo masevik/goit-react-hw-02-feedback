@@ -13,7 +13,7 @@ export const Button = styled.button`
 `;
 
 export const StatisticsItem = styled.li`
-  width: 90px;
+  width: 200px;
   display: flex;
   justify-content: space-between;
 `;
