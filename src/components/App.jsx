@@ -1,4 +1,3 @@
-import { GlobalStyle } from './GlobalStyle/GlobalStyle';
 import { Feedback } from './Feedback/Feedback';
 import { Component } from 'react';
 
@@ -39,17 +38,14 @@ export class App extends Component {
 
   render() {
     return (
-      <>
-        <Feedback
-          good={this.state.good}
-          neutral={this.state.neutral}
-          bad={this.state.bad}
-          total={this.countTotalFeedback()}
-          positivePercentage={this.countPositiveFeedbackPercentage()}
-          onClick={this.handleIncrement}
-        />
-        <GlobalStyle />
-      </>
+      <Feedback
+        good={this.state.good}
+        neutral={this.state.neutral}
+        bad={this.state.bad}
+        total={this.countTotalFeedback()}
+        positivePercentage={this.countPositiveFeedbackPercentage()}
+        onClick={this.handleIncrement}
+      />
     );
   }
 }
