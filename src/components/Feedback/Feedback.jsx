@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
-import { FeedbackOptions } from 'components/FeedbackOptions/FeedbackOptions';
-import { Notification } from 'components/Notification/Notification';
-import { Section } from 'components/Section/Section';
-import { Statistics } from 'components/Statistics/Statistics';
+import { FeedbackOptions } from 'components/FeedbackOptions/';
+import { Notification } from 'components/Notification/';
+import { Section } from 'components/Section/';
+import { Statistics } from 'components/Statistics/';
 import { Box } from '../Box';
 
 export const Feedback = ({

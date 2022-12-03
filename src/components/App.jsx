@@ -1,4 +1,4 @@
-import { Feedback } from './Feedback/Feedback';
+import { Feedback } from './Feedback';
 import { Component } from 'react';
 
 export class App extends Component {
