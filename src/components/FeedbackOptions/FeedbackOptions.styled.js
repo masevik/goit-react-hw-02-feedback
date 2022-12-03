@@ -11,9 +11,3 @@ export const Button = styled.button`
   font-weight: 600;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 `;
-
-export const StatisticsItem = styled.li`
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
-`;
