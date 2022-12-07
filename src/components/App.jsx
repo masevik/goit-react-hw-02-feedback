@@ -1,4 +1,3 @@
-// import { Feedback } from './Feedback';
 import { Component } from 'react';
 import { Box } from './Box';
 import { FeedbackOptions } from './FeedbackOptions';
@@ -13,21 +12,29 @@ export class App extends Component {
     bad: 0,
   };
 
-  handleIncrement = event => {
-    const targetName = event.currentTarget.name;
+  handleIncrement = option => {
     this.setState(prevState => {
-      switch (targetName) {
-        case 'good':
-          return { good: prevState.good + 1 };
-        case 'neutral':
-          return { neutral: prevState.neutral + 1 };
-        case 'bad':
-          return { bad: prevState.bad + 1 };
-        default:
-          console.log('default');
-      }
+      return {
+        [option]: prevState[option] + 1,
+      };
     });
   };
+
+  // handleIncrement = event => {
+  //   const targetName = event.currentTarget.name;
+  //   this.setState(prevState => {
+  //     switch (targetName) {
+  //       case 'good':
+  //         return { good: prevState.good + 1 };
+  //       case 'neutral':
+  //         return { neutral: prevState.neutral + 1 };
+  //       case 'bad':
+  //         return { bad: prevState.bad + 1 };
+  //       default:
+  //         console.log('default');
+  //     }
+  //   });
+  // };
 
   countTotalFeedback = () => {
     const { good, neutral, bad } = this.state;

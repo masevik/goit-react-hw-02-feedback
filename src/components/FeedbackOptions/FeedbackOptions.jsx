@@ -7,7 +7,12 @@ export const FeedbackOptions = ({ onLeaveFeedback, options }) => {
   return (
     <Box display="flex" mt="10px" mb="10px" as="div">
       {keys.map(key => (
-        <Button type="button" name={key} onClick={onLeaveFeedback} key={key}>
+        <Button
+          type="button"
+          name={key}
+          onClick={() => onLeaveFeedback(key)}
+          key={key}
+        >
           {key.charAt(0).toUpperCase() + key.slice(1)}
         </Button>
       ))}
