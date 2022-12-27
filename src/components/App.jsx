@@ -59,7 +59,7 @@ export class App extends Component {
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
-        {this.countTotalFeedback === 0 ? (
+        {this.countTotalFeedback() === 0 ? (
           <Notification message="There is no feedback" />
         ) : (
           <Section title="Statistics">
